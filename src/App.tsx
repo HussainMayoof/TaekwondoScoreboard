@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { defaultScore, ScoreContext } from './context.ts';
 import type { ScoreType } from './types.ts';
 import Scoreboard from './components/Scoreboard.tsx';
@@ -30,10 +30,6 @@ const App = () => {
             );
         },
     };
-
-    useEffect(() => {
-        document.title = 'Taekwondo Scoreboard';
-    }, []);
 
     return (
         <ScoreContext value={{ score, scoreActions }}>
