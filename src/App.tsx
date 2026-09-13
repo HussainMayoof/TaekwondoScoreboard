@@ -33,7 +33,7 @@ const App = () => {
 
     return (
         <ScoreContext value={{ score, scoreActions }}>
-            <div className="bg-black text-white min-h-screen">
+            <div className="bg-black text-white">
                 <Scoreboard />
             </div>
         </ScoreContext>
