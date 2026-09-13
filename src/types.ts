@@ -7,5 +7,6 @@ export type ScoreContextType = {
     scoreActions: {
         changeScore: (index: number, difference: number) => void;
         changePenalty: (index: number, difference: number) => void;
+        reset: () => void;
     };
 };

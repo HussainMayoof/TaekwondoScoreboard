@@ -29,6 +29,10 @@ const App = () => {
                     }) as ScoreType
             );
         },
+
+        reset: () => {
+            setScore(defaultScore);
+        },
     };
 
     return (
