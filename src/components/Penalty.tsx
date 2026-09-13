@@ -26,15 +26,15 @@ const Penalty = ({ player }: Props) => {
 
     return (
         <div
-            className={`flex items-stretch w-full ${player === 2 && 'flex-row-reverse'}`}
+            className={`flex h-full items-stretch ${player === 2 && 'flex-row-reverse'}`}
         >
-            <div className="grid grid-cols-1 w-1/5">
+            <div className="grid grid-cols-1 w-24">
                 <Button onClick={() => handlePenaltyChange(1)}>+</Button>
                 <Button onClick={() => handlePenaltyChange(-1)}>-</Button>
             </div>
 
             <div
-                className="p-12 text-center w-4/5"
+                className="p-12 text-center flex-1"
                 onClick={() => handlePenaltyChange(1)}
             >
                 <p>Penalty</p>

@@ -19,15 +19,15 @@ const Score = ({ player }: Props) => {
 
     return (
         <div
-            className={`flex items-stretch w-full ${player === 2 && 'flex-row-reverse'}`}
+            className={`flex items-stretch h-full ${player === 2 && 'flex-row-reverse'}`}
         >
-            <div className="grid grid-cols-1 w-1/5">
+            <div className="grid grid-cols-1 w-24">
                 <Button onClick={() => handleScoreChange(1)}>+</Button>
                 <Button onClick={() => handleScoreChange(-1)}>-</Button>
             </div>
 
             <div
-                className={`${player === 1 ? 'bg-red-600' : 'bg-blue-600'} text-center w-4/5`}
+                className={`${player === 1 ? 'bg-red-600' : 'bg-blue-600'} text-center flex-1`}
                 onClick={() => handleScoreChange(2)}
             >
                 <p>Player {player}</p>
