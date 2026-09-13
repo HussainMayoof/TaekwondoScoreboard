@@ -7,7 +7,7 @@ type Props = {
 
 const Button = ({ onClick, children }: Props) => {
     return (
-        <button className="border-2 p-7" onClick={onClick}>
+        <button className="border-2" onClick={onClick}>
             {children}
         </button>
     );

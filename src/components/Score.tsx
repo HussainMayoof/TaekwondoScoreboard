@@ -12,52 +12,28 @@ const Score = ({ player }: Props) => {
         ScoreContext
     ) as ScoreContextType;
     const playerIndex = player - 1;
-    const otherPlayerIndex = player % 2;
 
     const handleScoreChange = (difference: number) => {
         scoreActions.changeScore(playerIndex, difference);
     };
 
-    const handlePenaltyChange = (difference: number) => {
-        scoreActions.changePenalty(playerIndex, difference);
-        scoreActions.changeScore(otherPlayerIndex, difference);
-    };
-
     return (
-        <div className="w-full">
-            <div
-                className={`flex items-stretch ${player === 2 && 'flex-row-reverse'}`}
-            >
-                <div className="flex flex-col">
-                    <Button onClick={() => handleScoreChange(1)}>+</Button>
-                    <Button onClick={() => handleScoreChange(-1)}>-</Button>
-                </div>
-
-                <div
-                    className={`${player === 1 ? 'bg-red-600' : 'bg-blue-600'} text-center w-full`}
-                    onClick={() => handleScoreChange(2)}
-                >
-                    <p>Player {player}</p>
-                    <p className="font-[Seven_Segment] text-9xl">
-                        {score[playerIndex].score}
-                    </p>
-                </div>
+        <div
+            className={`flex items-stretch h-full ${player === 2 && 'flex-row-reverse'}`}
+        >
+            <div className="grid grid-cols-1 w-24">
+                <Button onClick={() => handleScoreChange(1)}>+</Button>
+                <Button onClick={() => handleScoreChange(-1)}>-</Button>
             </div>
 
             <div
-                className={`flex items-stretch ${player === 2 && 'flex-row-reverse'}`}
+                className={`${player === 1 ? 'bg-red-600' : 'bg-blue-600'} text-center flex-1`}
+                onClick={() => handleScoreChange(2)}
             >
-                <div className="flex flex-col">
-                    <Button onClick={() => handlePenaltyChange(1)}>+</Button>
-                    <Button onClick={() => handlePenaltyChange(-1)}>-</Button>
-                </div>
-
-                <div className="p-8 text-center">
-                    <p>Penalty</p>
-                    <p className="font-[Seven_Segment] text-8xl">
-                        {score[playerIndex].penalty}
-                    </p>
-                </div>
+                <p>Player {player}</p>
+                <p className="font-[Seven_Segment] text-9xl">
+                    {score[playerIndex].score}
+                </p>
             </div>
         </div>
     );
