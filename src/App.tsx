@@ -15,6 +15,9 @@ const App = () => {
                         penalty: prevState[index].penalty,
                     }) as ScoreType
             );
+
+            const buzzer = new Audio('beep.mp3');
+            void buzzer.play();
         },
 
         changePenalty: (index: number, difference: number) => {
