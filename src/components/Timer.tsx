@@ -13,6 +13,8 @@ const Timer = () => {
             if (running) {
                 if (time > 0) {
                     setTime(time - 1);
+                } else {
+                    setRunning(false);
                 }
             }
         }, 1000);
@@ -21,11 +23,13 @@ const Timer = () => {
 
     useEffect(() => {
         if (time === 0 && running) {
-            const resetTimer = () => {
+            const buzzer = new Audio('buzzer.mp3');
+            void buzzer.play();
+
+            setTimeout(() => {
                 setRunning(false);
                 setTime(120);
-            };
-            resetTimer();
+            }, 1000);
         }
     }, [running, time]);
 
