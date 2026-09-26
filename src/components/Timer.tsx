@@ -57,7 +57,11 @@ const Timer = () => {
 
                 <p
                     className={`font-[Seven_Segment] text-8xl flex-1 ${!running && 'text-yellow-400'}`}
-                    onClick={() => setRunning(!running)}
+                    onClick={() => {
+                        setRunning(!running);
+                        const beep = new Audio('beep.mp3');
+                        void beep.play();
+                    }}
                 >
                     {new Date(time * 1000)
                         .getUTCMinutes()

@@ -16,8 +16,8 @@ const App = () => {
                     }) as ScoreType
             );
 
-            const buzzer = new Audio('beep.mp3');
-            void buzzer.play();
+            const beep = new Audio('beep.mp3');
+            void beep.play();
         },
 
         changePenalty: (index: number, difference: number) => {
