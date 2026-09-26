@@ -47,7 +47,7 @@ const Timer = () => {
 
     return (
         <div className="flex h-full text-center justify-center">
-            <div className="grid grid-cols-1 w-12">
+            <div className="grid grid-cols-1 w-12 flex-1">
                 <Button onClick={() => handleTimeChange(60)}>+</Button>
                 <Button onClick={() => handleTimeChange(-60)}>-</Button>
             </div>
@@ -90,7 +90,7 @@ const Timer = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 w-12">
+            <div className="grid grid-cols-1 w-12 flex-1">
                 <Button onClick={() => handleTimeChange(1)}>+</Button>
                 <Button onClick={() => handleTimeChange(-1)}>-</Button>
             </div>

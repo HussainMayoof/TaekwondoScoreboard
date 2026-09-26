@@ -1,6 +1,7 @@
 import Score from './Score.tsx';
 import Penalty from './Penalty.tsx';
 import Timer from './Timer.tsx';
+import ExtraScores from './ExtraScores.tsx';
 
 const Scoreboard = () => {
     return (
@@ -18,6 +19,7 @@ const Scoreboard = () => {
             </div>
 
             <div className="col-span-6">
+                <ExtraScores />
                 <Timer />
             </div>
 
